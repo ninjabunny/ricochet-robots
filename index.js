@@ -17,17 +17,17 @@ function init(){
 		temp+='</tr>';
 	}
 	theTable.append(temp);
-
+	var sizeAdjustment = 16;
 	if($(window).height() < $(window).width()){
 		$('td').each(function(){
-			$(this).css('width', $(window).height()/mapWidth  - 9);
-			$(this).css('height', $(window).height()/mapWidth - 9);		
+			$(this).css('width', $(window).height()/mapWidth  - sizeAdjustment);
+			$(this).css('height', $(window).height()/mapWidth - sizeAdjustment);		
 		});
 		
 	} else {
 		$('td').each(function(){
-			$(this).css('width', $(window).width()/mapWidth  - 9);
-			$(this).css('height', $(window).width()/mapWidth - 9);		
+			$(this).css('width', $(window).width()/mapWidth  - sizeAdjustment);
+			$(this).css('height', $(window).width()/mapWidth - sizeAdjustment);		
 		});
 	}
 
@@ -38,32 +38,32 @@ function init(){
 	while(secondWall === firstWall || secondWall === firstWall + 1 || secondWall === firstWall - 1) {
 		secondWall = Math.floor((Math.random() * (mapWidth - 3) + 1));
 	}
-	$('tr:eq(0) td:eq('+ firstWall + ')').css('border-right', '5px solid').addClass('occupied');
-	$('tr:eq(0) td:eq('+ secondWall + ')').css('border-right', '5px solid').addClass('occupied');
+	$('tr:eq(0) td:eq('+ firstWall + ')').css('border-right', '10px solid').addClass('occupied');
+	$('tr:eq(0) td:eq('+ secondWall + ')').css('border-right', '10px solid').addClass('occupied');
 
 	firstWall = Math.floor((Math.random() * (mapWidth - 3) + 1));
 	secondWall = Math.floor((Math.random() * (mapWidth - 3) + 1));;
 	while(secondWall === firstWall || secondWall === firstWall + 1 || secondWall === firstWall - 1) {
 		secondWall = Math.floor((Math.random() * (mapWidth - 3) + 1));
 	}
-	$('tr:eq('+(mapheight-1)+') td:eq('+ firstWall + ')').css('border-right', '5px solid').addClass('occupied');
-	$('tr:eq('+(mapheight-1)+') td:eq('+ secondWall + ')').css('border-right', '5px solid').addClass('occupied');
+	$('tr:eq('+(mapheight-1)+') td:eq('+ firstWall + ')').css('border-right', '10px solid').addClass('occupied');
+	$('tr:eq('+(mapheight-1)+') td:eq('+ secondWall + ')').css('border-right', '10px solid').addClass('occupied');
 	//left and right walls
 	firstWall = Math.floor((Math.random() * (mapWidth - 3) + 1));
 	secondWall = Math.floor((Math.random() * (mapWidth - 3) + 1));;
 	while(secondWall === firstWall || secondWall === firstWall + 1 || secondWall === firstWall - 1) {
 		secondWall = Math.floor((Math.random() * (mapWidth - 3) + 1));
 	}
-	$('tr:eq('+firstWall+') td:eq(0)').css('border-bottom', '5px solid').addClass('occupied');
-	$('tr:eq('+secondWall+') td:eq(0)').css('border-bottom', '5px solid').addClass('occupied');
+	$('tr:eq('+firstWall+') td:eq(0)').css('border-bottom', '10px solid').addClass('occupied');
+	$('tr:eq('+secondWall+') td:eq(0)').css('border-bottom', '10px solid').addClass('occupied');
 
 	firstWall = Math.floor((Math.random() * (mapWidth - 3) + 1));
 	secondWall = Math.floor((Math.random() * (mapWidth - 3) + 1));;
 	while(secondWall === firstWall || secondWall === firstWall + 1 || secondWall === firstWall - 1) {
 		secondWall = Math.floor((Math.random() * (mapWidth - 3) + 1));
 	}
-	$('tr:eq('+firstWall+') td:eq('+(mapWidth-1)+')').css('border-bottom', '5px solid').addClass('occupied');
-	$('tr:eq('+secondWall+') td:eq('+(mapWidth-1)+')').css('border-bottom', '5px solid').addClass('occupied');
+	$('tr:eq('+firstWall+') td:eq('+(mapWidth-1)+')').css('border-bottom', '10px solid').addClass('occupied');
+	$('tr:eq('+secondWall+') td:eq('+(mapWidth-1)+')').css('border-bottom', '10px solid').addClass('occupied');
 
 	//populate map with L-shaped walls
 	var wallCount = 20;
